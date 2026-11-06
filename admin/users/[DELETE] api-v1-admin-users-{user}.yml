@@ -1,0 +1,25 @@
+info:
+  name: "[DELETE] api/v1/admin/users/{user}"
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{base_url}}/api/v1/admin/users/:user"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: user
+      value: 019de7cd-728b-7065-94a3-dd13a1f4426e
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

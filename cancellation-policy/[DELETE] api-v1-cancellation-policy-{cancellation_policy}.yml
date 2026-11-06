@@ -1,0 +1,25 @@
+info:
+  name: "[DELETE] api/v1/cancellation-policy/{cancellation_policy}"
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{base_url}}/api/v1/cancellation-policy/:cancellation_policy"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: cancellation_policy
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

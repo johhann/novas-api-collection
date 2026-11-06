@@ -1,0 +1,37 @@
+info:
+  name: "[POST] api/v1/auth/google-signin"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/auth/google-signin"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: multipart-form
+    data:
+      - name: email
+        type: text
+        value: "{{$randomEmail}}"
+      - name: sub
+        type: text
+        value: "{{$randomBankAccountIban}}"
+      - name: name
+        type: text
+        value: John
+  auth:
+    type: apikey
+    key: SOCIALITE-TOKEN
+    value: "{{socialiteToken}}"
+    placement: header
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

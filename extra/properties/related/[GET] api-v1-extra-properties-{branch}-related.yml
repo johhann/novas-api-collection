@@ -1,0 +1,25 @@
+info:
+  name: "[GET] api/v1/extra/properties/{branch}/related"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/extra/properties/:branch/related"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019ed5b8-c29d-70fe-96a2-4d87cf5c0697
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

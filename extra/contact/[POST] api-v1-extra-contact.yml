@@ -1,0 +1,33 @@
+info:
+  name: "[POST] api/v1/extra/contact"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/extra/contact"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "sample_text",
+          "first_name": "sample_text",
+          "last_name": "sample_text",
+          "email": "user16@example.com",
+          "phone": "sample_text",
+          "destination": "sample_text",
+          "property_type_id": "sample_text",
+          "message": "sample_text",
+          "source":"partner"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

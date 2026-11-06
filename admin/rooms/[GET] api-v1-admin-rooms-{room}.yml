@@ -1,0 +1,25 @@
+info:
+  name: "[GET] api/v1/admin/rooms/{room}"
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/admin/rooms/:room"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: room
+      value: 019d5035-5a9f-72cb-89c1-76cf6f73d616
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

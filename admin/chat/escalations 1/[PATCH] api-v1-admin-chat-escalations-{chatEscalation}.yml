@@ -1,0 +1,27 @@
+info:
+  name: "[PATCH] api/v1/admin/chat/escalations/{chatEscalation}"
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{base_url}}/api/v1/admin/chat/escalations/:chatEscalation"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "status": "sample_text",
+          "assigned_agent_id": "sample_text",
+          "resolution_notes": "sample_text"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

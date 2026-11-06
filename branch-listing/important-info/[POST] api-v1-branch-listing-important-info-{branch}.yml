@@ -1,0 +1,73 @@
+info:
+  name: "[POST] api/v1/branch-listing/important-info/{branch}"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/branch-listing/important-info/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019d9fd0-171b-72ec-b0ce-b381884f50c3
+      type: path
+  body:
+    type: json
+    data: |-
+      // {
+      //     "sections": [
+      //         {
+      //             "title": "{{$randomWord}}",
+      //             "content": "{{$randomWords}}"
+      //         },
+      //         {
+      //             "title": "{{$randomWord}}",
+      //             "content": "{{$randomWords}}"
+      //         },
+      //         {
+      //             "title": "{{$randomWord}}",
+      //             "content": "{{$randomWords}}"
+      //         },
+      //         {
+      //             "title": "{{$randomWord}}",
+      //             "content": "{{$randomWords}}"
+      //         }
+      //     ]
+      // }
+      // {
+      //     "sections": [
+      //         {
+      //             "title": "Booking Confirmation",
+      //             "content": "Your reservation is confirmed. A confirmation email has been sent to you."
+      //         },
+      //         {
+      //             "title": "Cancellation Policy",
+      //             "content": "Free cancellation is available up to 24 hours before check-in."
+      //         }
+      //     ]
+      // }
+
+      {
+        "sections": [
+          {
+            "title": "Check-in Instructions",
+            "content": "Please check in between 2:00 PM and 10:00 PM. Contact us in advance for late arrivals."
+          },
+          {
+            "title": "Parking Information",
+            "content": "Free parking is available on-site. No reservation is required."
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

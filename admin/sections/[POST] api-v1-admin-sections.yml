@@ -1,0 +1,31 @@
+info:
+  name: "[POST] api/v1/admin/sections"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/admin/sections"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "type": "terms_and_conditions",
+          "title": "{{$randomWords}}",
+          "data": "{{$randomWords}}",
+          // "order": 2,
+          "status": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

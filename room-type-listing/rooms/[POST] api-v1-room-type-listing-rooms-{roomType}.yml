@@ -1,0 +1,47 @@
+info:
+  name: "[POST] api/v1/room-type-listing/rooms/{roomType}"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/room-type-listing/rooms/:roomType"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: roomType
+      value: 019d03b0-5e24-7279-96c0-d50f80bf9ca0
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "rooms": [
+              {
+                  "floor": {{$randomInt}},
+                  "name": "{{$randomProduct}}",
+                  "status": "available"
+              },
+              {
+                  "floor": {{$randomInt}},
+                  "name": "{{$randomProduct}}",
+                  "status": "available"
+              },
+              {
+                  "floor": {{$randomInt}},
+                  "name": "{{$randomProduct}}",
+                  "status": "available"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

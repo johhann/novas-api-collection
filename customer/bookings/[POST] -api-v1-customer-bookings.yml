@@ -1,0 +1,108 @@
+info:
+  name: "[POST] /api/v1/customer/bookings"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/customer/bookings"
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
+      disabled: true
+  body:
+    type: json
+    data: |-
+      // {
+      //     "branch_id": "019d9b94-ba7e-723c-8ff4-0c48a56c5ee7",
+      //     "check_in_date": "2026-04-03",
+      //     "check_out_date": "2026-04-06",
+      //     "guests": [
+      //         {
+      //             "first_name": "{{$randomFirstName}}",
+      //             "last_name": "{{$randomLastName}}",
+      //             "email": "{{$randomEmail}}",
+      //             "phone": "{{$randomPhoneNumber}}"
+      //             // "phone": "251942533215"
+      //         },
+      //         {
+      //             "first_name": "{{$randomFirstName}}",
+      //             "last_name": "{{$randomLastName}}",
+      //             "email": "{{$randomEmail}}",
+      //             "phone": "{{$randomPhoneNumber}}"
+      //         },
+      //         {
+      //             "first_name": "{{$randomFirstName}}",
+      //             "last_name": "{{$randomLastName}}",
+      //             "email": "{{$randomEmail}}",
+      //             "phone": "{{$randomPhoneNumber}}"
+      //         }
+      //     ],
+      //     "room_type": "019d9cc4-0ef0-73d2-8b7b-325704fb7d4b",
+      //     "currency": "ETB",
+      //     "cancellation_policy_id": "",
+      //     "has_breakfast": "{{$randomBoolean}}",
+      //     "special_requests": "sample_text",
+      //     "number_of_rooms": 10,
+      //     "number_of_adults": 5,
+      //     "number_of_children": 7,
+      //     "payment_method": "arifpay",
+      //     "agreed_to_tos": "true",
+      //     "confirmed_age_greater_than_18": "true",
+      //     "agreed_to_house_rules": "true"
+      // }
+
+
+      {
+        "branch_id": "019e4a83-3a6b-72f2-89a4-742e80822aca",
+        "check_in_date": "2026-06-21",
+        "check_out_date": "2026-06-23",
+        "guests": [
+          {
+            "first_name": "Leole",
+            "last_name": "Masresha", 
+            "email": "nahomten@gmail.com",
+            "phone": "251911693790"
+          },
+          {
+            "first_name": "Marta",
+            "last_name": "Kebede",
+            "email": "marta.kebede@example.com",
+            "phone": "251923456789"
+          },
+          {
+            "first_name": "Samuel",
+            "last_name": "Bekele",
+            "email": "samuel.bekele@example.com",
+            "phone": "251934567890"
+          }
+        ],
+        "room_type": "019daa54-76c8-73ed-a1f1-310d3380c0d4",
+        "currency": "USD",
+        "cancellation_policy_id": null,
+        "has_breakfast": true,
+        "special_requests": "High floor room if available",
+        "number_of_rooms": 10,
+        "number_of_adults": 5,
+        "number_of_children": 7,
+        "payment_method": "stripe",
+        "agreed_to_tos": true,
+        "confirmed_age_greater_than_18": true,
+        "agreed_to_house_rules": true
+
+      //   "payer_selection": "logged_in_user", // main_guest, other
+      //   "other_payer": {
+      //     "first_name": "",
+      //     "last_name": "",
+      //     "email": "",
+      //     "phone": ""
+      //   }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

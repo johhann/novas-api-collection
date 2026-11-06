@@ -1,0 +1,38 @@
+info:
+  name: "[PUT] api/v1/cancellation-policy/{cancellation_policy}"
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/cancellation-policy/:cancellation_policy"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: cancellation_policy
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "name": "sample_text",
+          "cutoff_days": 4,
+          "fee_type": "sample_text",
+          "fee_value": 67,
+          "is_active": 1,
+          "room_type_ids": [
+              []
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

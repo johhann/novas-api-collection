@@ -1,0 +1,21 @@
+info:
+  name: "[DELETE] api/v1/auth/users-delete-account"
+  type: http
+  seq: 1
+
+http:
+  method: DELETE
+  url: "{{base_url}}/api/v1/auth/users-delete-account"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

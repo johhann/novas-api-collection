@@ -1,0 +1,42 @@
+info:
+  name: "[POST] api/v1/branch-listing/house-rules/{branch}"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/branch-listing/house-rules/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019d9f88-2914-7076-9372-3e6bf059bcd4
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "age": 20,
+          "pets": 1,
+          "check_in_start": "23:45",
+          "check_in_end": "23:45",
+          "check_out_start": "02:33",
+          "check_out_end": "02:33",
+          "sections": [
+              {
+                  "title": "{{$randomWord}}",
+                  "content": "{{$randomWords"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,51 @@
+info:
+  name: "[POST] api/v1/user-listing"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/user-listing"
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
+  body:
+    type: multipart-form
+    data:
+      - name: first_name
+        type: text
+        value: "{{$randomFirstName}}"
+      - name: last_name
+        type: text
+        value: "{{$randomLastName}}"
+      - name: email
+        type: text
+        value: "{{$randomEmail}}"
+      - name: phone
+        type: text
+        value: 251987594{{$randomInt}}
+      - name: branch_id
+        type: text
+        value: 019d5c6e-3691-73fe-8f03-a5a1b186981f
+      - name: roles[0]
+        type: text
+        value: 019d5c6e-1c0d-7188-86d4-d822a1b4f1b7
+      - name: roles[1]
+        type: text
+        value: ""
+        disabled: true
+      - name: avatar
+        type: file
+        value:
+          - /C:/Users/leul/Pictures/Screenshots/Screenshot 2025-09-12 093025.png
+      - name: fayda_fan_id
+        type: text
+        value: "6656657775775"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

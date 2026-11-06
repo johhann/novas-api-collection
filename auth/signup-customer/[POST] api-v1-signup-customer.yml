@@ -1,0 +1,31 @@
+info:
+  name: "[POST] api/v1/signup-customer"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/signup-customer"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "first_name": "Fetahi",
+          "last_name": "Masresha",
+          "email": "{{$randomEmail}}",
+          // "phone": "{{$randomPhoneNumber}}"
+          "phone": "251913131313"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

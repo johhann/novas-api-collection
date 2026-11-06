@@ -1,0 +1,23 @@
+info:
+  name: "[POST] api/v1/admin/liteapi/bookings/{liteApiBooking}/reconcile"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/admin/liteapi/bookings/:liteApiBooking/reconcile"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: liteApiBooking
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

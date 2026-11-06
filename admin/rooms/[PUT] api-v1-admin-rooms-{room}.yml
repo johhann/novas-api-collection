@@ -1,0 +1,33 @@
+info:
+  name: "[PUT] api/v1/admin/rooms/{room}"
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/admin/rooms/:room"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: room
+      value: 019d5035-5a9f-72cb-89c1-76cf6f73d616
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "name": "Rom-{{$randomInt}}",
+          "floor": 8,
+          "status": "available"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

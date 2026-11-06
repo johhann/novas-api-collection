@@ -1,0 +1,44 @@
+info:
+  name: "[GET] api/v1/extra/properties/{branch}/room-types"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/extra/properties/:branch/room-types?occupancies[][adults]=1&check_in_date=2026-12-17&check_out_date=2026-12-18&live_rates=1&adults[][adults]="
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: room_category_id
+      value: ""
+      type: query
+      disabled: true
+    - name: occupancies[][adults]
+      value: "1"
+      type: query
+    - name: check_in_date
+      value: 2026-12-17
+      type: query
+    - name: check_out_date
+      value: 2026-12-18
+      type: query
+    - name: live_rates
+      value: "1"
+      type: query
+    - name: adults[][adults]
+      value: ""
+      type: query
+    - name: branch
+      value: 019ed605-6459-7268-a4ec-ae64ddaf6a65
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

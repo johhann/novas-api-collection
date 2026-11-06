@@ -1,0 +1,7 @@
+info:
+  name: view-types
+  type: folder
+  seq: 20
+
+request:
+  auth: inherit

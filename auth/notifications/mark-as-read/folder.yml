@@ -1,0 +1,7 @@
+info:
+  name: mark-as-read
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit

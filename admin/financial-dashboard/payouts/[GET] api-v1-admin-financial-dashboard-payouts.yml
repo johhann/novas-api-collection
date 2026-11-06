@@ -1,0 +1,62 @@
+info:
+  name: "[GET] api/v1/admin/financial-dashboard/payouts"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/admin/financial-dashboard/payouts?currency=ETB&source=all&period=this_month&from=2026-07-01&to=2026-07-31&branch_id={{branch_id}}&partner_id={{partner_id}}&provider=santimpay&status=requested&type=all&scope=overview&search=sample&page=1&limit=15"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: currency
+      value: ETB
+      type: query
+    - name: source
+      value: all
+      type: query
+    - name: period
+      value: this_month
+      type: query
+    - name: from
+      value: 2026-07-01
+      type: query
+    - name: to
+      value: 2026-07-31
+      type: query
+    - name: branch_id
+      value: "{{branch_id}}"
+      type: query
+    - name: partner_id
+      value: "{{partner_id}}"
+      type: query
+    - name: provider
+      value: santimpay
+      type: query
+    - name: status
+      value: requested
+      type: query
+    - name: type
+      value: all
+      type: query
+    - name: scope
+      value: overview
+      type: query
+    - name: search
+      value: sample
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "15"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

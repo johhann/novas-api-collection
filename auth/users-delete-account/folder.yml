@@ -1,0 +1,7 @@
+info:
+  name: users-delete-account
+  type: folder
+  seq: 10
+
+request:
+  auth: inherit

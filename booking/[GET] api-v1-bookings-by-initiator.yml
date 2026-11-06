@@ -1,0 +1,27 @@
+info:
+  name: "[GET] api/v1/bookings/by-initiator"
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/bookings/by-initiator?initiated_by=customer"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{token}}
+  params:
+    - name: initiated_by
+      value: customer
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

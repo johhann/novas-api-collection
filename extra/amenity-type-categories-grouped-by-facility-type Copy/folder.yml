@@ -1,0 +1,7 @@
+info:
+  name: amenity-type-categories-grouped-by-facility-type Copy
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit

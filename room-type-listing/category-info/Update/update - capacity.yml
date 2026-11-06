@@ -1,0 +1,32 @@
+info:
+  name: update - capacity
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/room-type-listing/capacity/:roomTypeId"
+  headers:
+    - name: Authorization
+      value: Bearer{{token}}
+  params:
+    - name: roomTypeId
+      value: 019d4cff-01ee-73ad-b799-1935f5656e16
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"adults\": 4,\r
+
+      \  \"children\": 4\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

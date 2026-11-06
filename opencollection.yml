@@ -1,0 +1,63 @@
+opencollection: 1.0.0
+
+info:
+  name: Novas
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  auth:
+    type: bearer
+    token: "{{token}}"
+  variables:
+    - name: base_url
+      value: http://gojo-backend.test
+  scripts:
+    - type: before-request
+      code: |-
+        // Set Accept header to application/json
+        req.setHeader('Accept', 'application/json');
+
+        req.setHeader('Content-Type', 'application/json');
+
+        // pm.request.headers.add({
+        //     key: 'X-App-Portal',
+        //     value: 'admin'
+        //     // value: 'partner'
+        //     // value: 'customer'
+        // });
+
+
+        // pm.request.headers.add({
+        //     key: 'XDEBUG_SESSION',
+        //     value: 'VSCODE'
+        // })
+
+        // pm.request.headers.add({
+        //     key: 'Cookie',
+        //     value: "XDEBUG_SESSION=VSCODE"
+        // })
+
+        // pm.request.headers.add({
+        //     key: 'XDEBUG_TRIGGER',
+        //     value: 1
+        // })
+
+docs:
+  content: API Documentation
+  type: text/markdown
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

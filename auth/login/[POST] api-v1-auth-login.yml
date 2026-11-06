@@ -1,0 +1,51 @@
+info:
+  name: "[POST] api/v1/auth/login"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/auth/login"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: X-App-Portal
+      value: admin
+  body:
+    type: json
+    data: |-
+      {
+          //"phone":"251912121299",
+          //"phone":"251913131313",
+          //"phone":"251914141414",
+          //"phone":"251915151515",
+          //"phone":"251936986336",
+      //     "phone":"251912121212",
+          //"remember_me":"1",
+          //"email":"wallet-demo-beta@example.com",
+          //"phone":"251904825407",
+          "email":"admin@gojo.com",
+          //"email": "property_admin@gojo.com",
+          //"password":"OpenAi@2023"
+          "password": "password"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const response = res.getBody();
+        const token = response.data.access_token;
+        const refreshToken = response.data.refresh_token;
+        bru.setEnvVar('token', token);
+        bru.setEnvVar('refresh_token', refreshToken);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

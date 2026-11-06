@@ -1,0 +1,7 @@
+info:
+  name: property-type-counts
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

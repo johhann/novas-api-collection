@@ -1,0 +1,7 @@
+info:
+  name: important-info
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

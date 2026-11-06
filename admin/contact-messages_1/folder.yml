@@ -1,0 +1,7 @@
+info:
+  name: contact-messages_1
+  type: folder
+  seq: 28
+
+request:
+  auth: inherit

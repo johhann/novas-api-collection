@@ -1,0 +1,62 @@
+info:
+  name: update - basic info
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/room-type-listing/basic-info/:roomTypeId"
+  headers:
+    - name: Authorization
+      value: Bearer{{token}}
+  params:
+    - name: roomTypeId
+      value: 019d5035-5861-7391-a7e8-c2aa9296a6bb
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"{{$randomCompanyName}}\",\r
+
+      \    \"description\": \"{{$randomWords}}\",\r
+
+      \    \"room_category_id\": \"019d5035-57be-7318-924d-b9f0877a5e5e\",\r
+
+      \    \"bed_type_ids\": [\r
+
+      \        // \"019d5035-5aac-7005-9044-edb02f4eca06\",\r
+
+      \        \"019d5035-5aac-7005-9044-edb0304a7be7\"\r
+
+      \    ],\r
+
+      \    \"beds\": {{$randomInt}},\r
+
+      \    \"size\": {{$randomInt}},\r
+
+      \    \"area_unit\": \"square_meter\", // square_meter, square_foot\r
+
+      \    \"view_type_ids\": [\r
+
+      \        // \"019d5035-56e4-72bc-8f9f-30e274d1a030\",\r
+
+      \        \"019d5035-56e3-73e2-b304-fdf801bb77f5\"\r
+
+      \    ],\r
+
+      \    \"bathroom_type\": \"shared\", //shared, private\r
+
+      \    \"price_etb\": {{$randomInt}},\r
+
+      \    \"price_usd\": {{$randomInt}}\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

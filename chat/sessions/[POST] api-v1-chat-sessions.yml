@@ -1,0 +1,37 @@
+info:
+  name: "[POST] api/v1/chat/sessions"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/chat/sessions"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "locale": "en",
+          "channel": "web",
+          "metadata": {
+            "device": "web" 
+          }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const response = res.getBody();
+        const chatbotSession = response.data.session.session_token;
+        bru.setEnvVar('chatbotSession', chatbotSession);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

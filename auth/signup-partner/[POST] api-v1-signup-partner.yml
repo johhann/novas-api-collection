@@ -1,0 +1,69 @@
+info:
+  name: "[POST] api/v1/signup-partner"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/signup-partner"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "partner": {
+              "name": "{{$randomCompanyName}}",
+              "email": "{{$randomEmail}}",
+              "phone": "{{$randomPhoneNumber}}",
+              "phone_alternative": "{{$randomPhoneNumber}}",
+              "property_type_id": "019edafe-17d2-72e6-a941-15ed982e3dcb",
+              "manager": "{{$randomFullName}}",
+              "license_expired_date": "2026-11-12",
+              // "business_license": "attachement", //file
+              "tin_number": "{{$randomInt}}"
+          },
+          "bank_account": [
+              {
+                  "bank_id": "019e4947-ac6d-7399-9df6-d7cae7d17815",
+                  "account_number": "{{$randomBankAccount}}",
+                  "account_type": "etb"
+              },
+              {
+                  "bank_name": "{{$randomCompanyName}}",
+                  "account_number": "{{$randomBankAccount}}",
+                  "account_type": "usd"
+              }
+          ],
+          "user": {
+              "first_name": "{{$randomFirstName}}",
+              "last_name": "{{$randomLastName}}",
+              "email": "{{$randomEmail}}",
+              // "phone": "{{$randomPhoneNumber}}",
+              "phone": "251942533215",
+              "fayda_fan_id": "{{$randomBankAccount}}",
+              "password": "password",
+              "password_confirmation": "password"
+          }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const response = res.getBody();
+        const token = response.data.token;
+        if (token) {
+            bru.setEnvVar('verificationToken', token);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

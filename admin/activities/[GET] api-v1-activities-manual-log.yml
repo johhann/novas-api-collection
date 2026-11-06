@@ -1,0 +1,33 @@
+info:
+  name: "[GET] api/v1/activities/manual-log"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/activities/manual-log"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "log_name": "booking_created", // to be provided from backend
+          "subject_type": "Booking",
+          "subject_id": "019de7ec-c476-70b6-b1f3-23800c83f43f",
+          "properties": {
+              "description": "{{$randomWords}}",
+              "customer_name": "{{$randomFullName}}"
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

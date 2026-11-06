@@ -1,0 +1,23 @@
+info:
+  name: "[PATCH] api/v1/admin/contact-messages/{contact_message}/mark-as-read"
+  type: http
+  seq: 1
+
+http:
+  method: PATCH
+  url: "{{base_url}}/api/v1/admin/contact-messages/:contact_message/mark-as-read"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: contact_message
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

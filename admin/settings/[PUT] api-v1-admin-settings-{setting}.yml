@@ -1,0 +1,41 @@
+info:
+  name: "[PUT] api/v1/admin/settings/{setting}"
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/admin/settings/:setting"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: setting
+      value: ""
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: value
+        type: text
+        value: sample_text
+      - name: mode
+        type: text
+        value: sample_text
+      - name: settings_type
+        type: text
+        value: sample_text
+      - name: is_active
+        type: text
+        value: "1"
+      - name: attachment
+        type: file
+        value: []
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

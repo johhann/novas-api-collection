@@ -1,0 +1,40 @@
+info:
+  name: "[POST] api/v1/admin/room-types"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/admin/room-types"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": [],
+          "category_id": "sample_text",
+          "branch_id": "sample_text",
+          "beds": 6,
+          "floor": "sample_text",
+          "size": "sample_text",
+          "area_unit": "sample_text",
+          "price_etb": "sample_text",
+          "price_usd": "sample_text",
+          "price_breakfast_etb": "sample_text",
+          "price_breakfast_usd": "sample_text",
+          "adults": 10,
+          "children": 3,
+          "smoking_allowed": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

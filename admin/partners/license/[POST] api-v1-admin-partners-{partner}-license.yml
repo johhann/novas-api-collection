@@ -1,0 +1,29 @@
+info:
+  name: "[POST] api/v1/admin/partners/{partner}/license"
+  type: http
+  seq: 1
+
+http:
+  method: PATCH
+  url: "{{base_url}}/api/v1/admin/partners/:partner/license"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: partner
+      value: 019ebd79-1b84-707e-90e2-b428dbc06a34
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "license_expired_date":"2027-07-03"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

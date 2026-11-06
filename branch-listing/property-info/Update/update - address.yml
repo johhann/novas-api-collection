@@ -1,0 +1,34 @@
+info:
+  name: update - address
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/branch-listing/address/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019d4e70-ae9b-72f5-96b7-eb08a640a936
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "street_one": "{{$randomStreetAddress}}",
+          "street_two": "{{$randomStreetAddress}}",
+          "house_number": "{{$randomInt}}",
+          "sub_city_id": "019d4e70-92df-701d-a982-0e2a2ae09a76"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

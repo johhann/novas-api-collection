@@ -1,0 +1,23 @@
+info:
+  name: "[DELETE] api/v1/admin/settings/{setting}"
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{base_url}}/api/v1/admin/settings/:setting"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: setting
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

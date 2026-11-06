@@ -1,0 +1,19 @@
+info:
+  name: "[GET] api/v1/discount/scheduled"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/discount/scheduled"
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

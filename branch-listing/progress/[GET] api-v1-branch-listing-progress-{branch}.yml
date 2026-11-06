@@ -1,0 +1,25 @@
+info:
+  name: "[GET] api/v1/branch-listing/progress/{branch}"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/branch-listing/progress/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019d0218-b3ea-73ac-aaa4-8537ed5bd68e
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

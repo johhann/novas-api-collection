@@ -1,0 +1,25 @@
+info:
+  name: "[DELETE] api/v1/admin/roles/{role}"
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{base_url}}/api/v1/admin/roles/:role"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: role
+      value: 019d638a-e5db-71ba-8627-f469116bb5de
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,64 @@
+info:
+  name: "[POST] api/v1/branch-listing/property-info/{branch}"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/branch-listing/property-info/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019d0cb1-1ae9-7391-81b8-a8b5870cf702
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: "{{$randomCompanyName}}"
+      - name: description
+        type: text
+        value: "{{$randomWords}}"
+      - name: phone
+        type: text
+        value: "{{$randomPhoneNumber}}"
+      - name: cover
+        type: file
+        value:
+          - postman-cloud:///1f123263-5932-4080-aee7-b90d3fca984a
+      - name: photos[]
+        type: file
+        value:
+          - postman-cloud:///1f123263-5932-4080-aee7-b90d3fca984a
+          - postman-cloud:///1f123263-5d0e-4cd0-b692-14abf9c6d0cc
+      - name: address[sub_city_id]
+        type: text
+        value: 019d0cb1-00c3-728a-95c4-af25ffa58137
+      - name: address[street_one]
+        type: text
+        value: "{{$randomStreetAddress}}"
+      - name: address[street_two]
+        type: text
+        value: "{{$randomStreetAddress}}"
+      - name: address[house_number]
+        type: text
+        value: "{{$randomInt}}"
+      - name: geolocation[latitude]
+        type: text
+        value: "{{$randomLatitude}}"
+      - name: geolocation[longitude]
+        type: text
+        value: "{{$randomLongitude}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

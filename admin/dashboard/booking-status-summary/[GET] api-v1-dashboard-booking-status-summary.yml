@@ -1,0 +1,33 @@
+info:
+  name: "[GET] api/v1/dashboard/booking-status-summary"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/dashboard/booking-status-summary?year=2026"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: year
+      value: "2026"
+      type: query
+    - name: period
+      value: weekly
+      type: query
+      disabled: true
+    - name: month
+      value: "4"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

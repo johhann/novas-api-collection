@@ -1,0 +1,22 @@
+info:
+  name: "[GET] api/v1/user-listing/stats"
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/user-listing/stats"
+  headers:
+    - name: Authorization
+      value: Bearer{{token}}
+  body:
+    type: text
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,46 @@
+info:
+  name: "[POST] api/v1/admin/settings"
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/admin/settings"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "key_name": "portal",
+          "settings_type": "app_config",
+          "mode": "test",
+          "value": {
+              "enabled": false,
+              "header": "Header",
+              "domain_restriction_enabled": false,
+              "unauthorized_message": "Invalid App",
+              "origins": {
+                  "customer": "http://localhost,http://127.0.0.1",
+                  "partner": "http://localhost,http://127.0.0.1",
+                  "admin": "http://localhost,http://127.0.0.1"
+              },
+              "files_urls": {
+                  "customer": "http://localhost,http://127.0.0.1",
+                  "partner": "http://localhost,http://127.0.0.1",
+                  "admin": "http://localhost,http://127.0.0.1"
+              },
+              "description": "Configure portal security settings, domain restrictions, and file URLs."
+          },
+          "is_active": 0,
+          "additional_data": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

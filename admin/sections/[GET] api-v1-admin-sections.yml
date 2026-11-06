@@ -1,0 +1,35 @@
+info:
+  name: "[GET] api/v1/admin/sections"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/admin/sections?page=1&limit=10&type[]=house_rule"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "10"
+      type: query
+    - name: type[]
+      value: house_rule
+      type: query
+    - name: search
+      value: best
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

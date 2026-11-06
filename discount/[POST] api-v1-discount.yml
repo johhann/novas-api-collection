@@ -1,0 +1,42 @@
+info:
+  name: "[POST] api/v1/discount"
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/discount"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"Late April Promotion\",\r
+
+      \  \"type\": \"percentage\",\r
+
+      \  \"value\": 30,\r
+
+      \  \"start_date\": \"2026-04-15\",\r
+
+      \  \"end_date\": \"2026-04-25\",\r
+
+      \  \"room_type_ids\": [\r
+
+      \    \"019d53dc-fbc7-728c-8958-88f3adb725ba\"\r
+
+      \  ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

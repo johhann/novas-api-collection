@@ -1,0 +1,25 @@
+info:
+  name: "[POST] /api/v1/public-verifications/send"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/public-verifications/send"
+  body:
+    type: json
+    data: |-
+      {
+          "email": "nahomten@gmail.com",
+          "first_name": "",
+          "last_name": "",
+          "name": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

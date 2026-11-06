@@ -1,0 +1,49 @@
+info:
+  name: "[GET] api/v1/activities"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/activities?page=1&limit=3&log_type[]=manual_log"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "3"
+      type: query
+    - name: log_type[]
+      value: manual_log
+      type: query
+      description: manual_log, system_log
+    - name: log_name[]
+      value: booking_created
+      type: query
+      disabled: true
+    - name: causer_id
+      value: 019de7ca-b090-73e5-abe6-22d1c1426f1d
+      type: query
+      disabled: true
+    - name: subject_type
+      value: Booking
+      type: query
+      description: Booking,User
+      disabled: true
+    - name: subject_id
+      value: 019de7ec-c476-70b6-b1f3-23800c83f422
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

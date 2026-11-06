@@ -1,0 +1,47 @@
+info:
+  name: "[GET] /api/v1/customer/bookings"
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/customer/bookings/my"
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
+  params:
+    - name: status
+      value: expired
+      type: query
+      disabled: true
+    - name: start_date
+      value: 2026-04-01
+      type: query
+      disabled: true
+    - name: end_date
+      value: 2026-04-30
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: limit
+      value: "10"
+      type: query
+      disabled: true
+    - name: rating[]
+      value: "1"
+      type: query
+      disabled: true
+    - name: rating[]
+      value: "5"
+      type: query
+      disabled: true
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

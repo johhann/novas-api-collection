@@ -1,0 +1,34 @@
+info:
+  name: "[POST] api/v1/branch-listing/facilities/{branch}"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/branch-listing/facilities/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019d0cd0-c89b-704d-91c6-22c964867c3b
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "facilities": [
+              "019d0cd0-cb06-7107-8b09-f7783233f988",
+              "019d0cd0-cb06-7107-8b09-f77832e427ed"
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,21 @@
+name: Stage
+variables:
+  - name: base_url
+    value: https://novasapi.yeroprime.com
+  - name: verificationToken
+    value: 99|9SpwuDJIybWGDseaJOvbopizAu1sNtK7XbvkTsAj549aafca
+  - name: socialiteToken
+    value: google_token_c6a29d3d-5b46-447d-ac18-313786b136b3
+  - name: LIte_Api_Base_Url
+    value: ""
+  - name: LIte_Api_Api_key
+    value: ""
+  - name: x-app-portal
+    value: ""
+    description: customer, partner, admin
+  - name: token
+    value: 3960|zP66bkW1Aba9FAc3Adgwtu5dPQ8LhoXbPeStdQN6769eddae
+  - name: refresh_token
+    value: 3961|8hQy13VFrrlCkZMusIpQKBgHJgeQ7H8WCc6x3kBE91cf9071
+  - name: chatbotSession
+    value: rlPeY3GkhuOludi7hNgponKaKCEP7eAghiOMP7ok

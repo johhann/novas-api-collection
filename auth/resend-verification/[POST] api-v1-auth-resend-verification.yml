@@ -1,0 +1,41 @@
+info:
+  name: "[POST] api/v1/auth/resend-verification"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/auth/resend-verification"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: multipart-form
+    data:
+      - name: email
+        type: text
+        value: Ora_Beier@gmail.com
+        disabled: true
+      - name: phone
+        type: text
+        value: "942533215"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const response = res.getBody();
+        const token = response.data.token;
+        if (token) {
+            bru.setEnvVar('verificationToken', token);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

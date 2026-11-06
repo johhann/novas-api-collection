@@ -1,0 +1,34 @@
+info:
+  name: update - geolocation
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/branch-listing/geo/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019d4e70-ae9b-72f5-96b7-eb08a640a936
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "geolocation": {
+              "latitude": {{$randomLatitude}},
+              "longitude": {{$randomLongitude}}
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

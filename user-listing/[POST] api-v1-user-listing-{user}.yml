@@ -1,0 +1,36 @@
+info:
+  name: "[POST] api/v1/user-listing/{user}"
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/user-listing/:user"
+  headers:
+    - name: Authorization
+      value: Bearer{{token}}
+  params:
+    - name: user
+      value: 019d4cd7-bfe9-73cd-8968-c8beb602f6f1
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: first_name
+        type: text
+        value: trew
+      - name: last_name
+        type: text
+        value: bbbb
+      - name: phone
+        type: text
+        value: ""
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

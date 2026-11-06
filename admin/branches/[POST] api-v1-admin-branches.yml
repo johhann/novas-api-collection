@@ -1,0 +1,34 @@
+info:
+  name: "[POST] api/v1/admin/branches"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/admin/branches"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: ""
+      value: ""
+  body:
+    type: json
+    data: |-
+      {
+          "name": "sample_text",
+          "city_id": "sample_text",
+          "address": "sample_text",
+          "phone": "sample_text",
+          "email": "user49@example.com",
+          "status": "sample_text"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

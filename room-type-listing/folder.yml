@@ -1,0 +1,7 @@
+info:
+  name: room-type-listing
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

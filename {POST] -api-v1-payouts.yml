@@ -1,0 +1,27 @@
+info:
+  name: "{POST] /api/v1/payouts"
+  type: http
+  seq: 17
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/payouts"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"account_id\": \"019e4958-ce0f-72fa-8419-7aadef6495b5\",\r
+
+      \  \"amount\": 1,\r
+
+      \  \"reason\": \"Partner withdrawal\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

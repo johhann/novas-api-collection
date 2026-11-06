@@ -1,0 +1,7 @@
+info:
+  name: booking-summary
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

@@ -1,0 +1,42 @@
+info:
+  name: "[GET] api/v1/extra/properties/filter-counts"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/extra/properties/filter-counts"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: city_id
+      value: 019d9fcf-dfa7-71a3-9e3f-d376daadd7a0
+      type: query
+      disabled: true
+    - name: property_type_id
+      value: 019d9185-5fdd-7200-93ba-25f73accd746
+      type: query
+      disabled: true
+    - name: max_price
+      value: "4500"
+      type: query
+      disabled: true
+    - name: min_price
+      value: "4000"
+      type: query
+      disabled: true
+    - name: room_amenities[]
+      value: 019d9fd0-12d5-710e-a7ed-6f009d6c630a
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,68 @@
+info:
+  name: "[POST] api/v1/booking"
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/bookings"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          // "user_id": "sample_text",
+          "branch_id": "019ed5bc-75dc-70b9-884a-3bf088b9ef0a",
+          "check_in_date": "2026-06-18",
+          "check_out_date": "2026-06-19",
+          "number_of_adults": "{{$randomInt}}",
+          "number_of_children": "{{$randomInt}}",
+          "cancellation_policy": [
+              // {
+              //     "has_breakfast": true, //boolean
+              //     "cancelation_policy_id": "019d59ad-15a9-731a-9277-2d60531930d8" // nullable
+              // },
+              // {
+              //     "has_breakfast": true, //boolean
+              //     "cancellation_policy_id": "019d59ad-15a9-731a-9277-2d60531930d8" //nullable
+              // }
+          ],
+          "rooms": [
+              "019de7ca-e63d-73f3-ae1f-c00512e9d9e6"
+              // "019d47f4-fe63-7237-9b22-f17d3880b393"
+          ],
+          "currency": "ETB", //USD, ETB
+          "guests": [
+              {
+                  "first_name": "{{$randomFirstName}}",
+                  "last_name": "{{$randomLastName}}",
+                  "email": "{{$randomEmail}}",
+                  // "phone": "{{$randomPhoneNumber}}"
+                  "phone": "251942533215"
+              },
+              {
+                  "first_name": "{{$randomFirstName}}",
+                  "last_name": "{{$randomLastName}}",
+                  "email": "{{$randomEmail}}",
+                  "phone": "{{$randomPhoneNumber}}"
+              },
+              {
+                  "first_name": "{{$randomFirstName}}",
+                  "last_name": "{{$randomLastName}}",
+                  "email": "{{$randomEmail}}",
+                  "phone": "{{$randomPhoneNumber}}"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

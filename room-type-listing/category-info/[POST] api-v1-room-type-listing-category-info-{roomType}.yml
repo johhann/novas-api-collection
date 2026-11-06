@@ -1,0 +1,51 @@
+info:
+  name: "[POST] api/v1/room-type-listing/category-info/{roomType}"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/room-type-listing/category-info"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "sample_text",
+          "description": "sample_text",
+          "branch_id": "019d03ab-e6bc-71ca-adeb-b5b78804489d",
+          "room_category_id": "019d03ab-e777-73d9-942f-528bcefed7bd",
+          "cover_id": "sample_text",
+          "photo_ids": [
+              "uuid",
+              "uuid"
+          ],
+          "bed_types": [
+              "019d03ab-e90e-73df-9fef-56527d668d8d",
+              "019d03ab-e90e-73df-9fef-56527ea823db"
+          ],
+          "view_types": [
+              "019d03ab-e6d1-70ba-9f9d-d353f2ce7539",
+              "019d03ab-e6d1-70ba-9f9d-d353f0b38355"
+          ],
+          "bathroom_type": "shared",
+          "no_of_beds": 1,
+          "size": "{{$randomInt}}",
+          "area_unit": "square_meter",
+          "price_etb": "{{$randomInt}}",
+          "price_usd": "{{$randomInt}}",
+          "adults": 3,
+          "children": 10
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

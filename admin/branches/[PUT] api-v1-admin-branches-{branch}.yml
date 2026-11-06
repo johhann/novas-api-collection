@@ -1,0 +1,38 @@
+info:
+  name: "[PUT] api/v1/admin/branches/{branch}"
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/admin/branches/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "name": "sample_text",
+          "status": "sample_text",
+          "is_main_branch": 0,
+          "partner_id": "sample_text",
+          "address": "sample_text",
+          "phone": "sample_text",
+          "email": "user8@example.com",
+          "website": "sample_text"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

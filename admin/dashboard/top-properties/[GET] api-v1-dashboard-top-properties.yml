@@ -1,0 +1,36 @@
+info:
+  name: "[GET] api/v1/dashboard/top-properties"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/dashboard/top-properties?year=2026&limit=5&sort_by=bookings"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: year
+      value: "2026"
+      type: query
+    - name: limit
+      value: "5"
+      type: query
+    - name: month
+      value: "5"
+      type: query
+      disabled: true
+    - name: sort_by
+      value: bookings
+      type: query
+      description: revenue, bookings
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

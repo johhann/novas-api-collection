@@ -1,0 +1,31 @@
+info:
+  name: "[PUT] api/v1/admin/roles/{role}"
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/admin/roles/:role"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: role
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "name": "sample_text"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

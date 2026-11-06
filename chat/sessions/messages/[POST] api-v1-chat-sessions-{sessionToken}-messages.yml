@@ -1,0 +1,25 @@
+info:
+  name: "[POST] api/v1/chat/sessions/{sessionToken}/messages"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/chat/sessions/{{chatbotSession}}/messages"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "message": "what are the competitors of novas booking in ethiopia?"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

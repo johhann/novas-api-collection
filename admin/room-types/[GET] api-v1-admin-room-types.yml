@@ -1,0 +1,40 @@
+info:
+  name: "[GET] api/v1/admin/room-types"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/admin/room-types?page=1&limit=10"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "10"
+      type: query
+    - name: grouped_rooms
+      value: "true"
+      type: query
+      disabled: true
+    - name: available_rooms_only
+      value: "1"
+      type: query
+      disabled: true
+    - name: include_cancellation_policies
+      value: "1"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

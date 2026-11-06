@@ -1,0 +1,23 @@
+info:
+  name: "[GET] api/v1/admin/liteapi/bookings/{booking}"
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/admin/liteapi/bookings/:booking"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: booking
+      value: 019e5414-d19a-72f9-bcea-cce04c3ffec2
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

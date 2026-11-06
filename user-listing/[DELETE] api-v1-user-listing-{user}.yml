@@ -1,0 +1,26 @@
+info:
+  name: "[DELETE] api/v1/user-listing/{user}"
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{base_url}}/api/v1/user-listing/:user"
+  headers:
+    - name: Authorization
+      value: Bearer{{token}}
+  params:
+    - name: user
+      value: ""
+      type: path
+  body:
+    type: text
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

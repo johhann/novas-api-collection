@@ -1,0 +1,28 @@
+info:
+  name: "[PATCH] api/v1/admin/liteapi/hotels/property-type"
+  type: http
+  seq: 1
+
+http:
+  method: PATCH
+  url: "{{base_url}}/api/v1/admin/liteapi/hotels/property-type"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "hotel_ids": [
+              "019ed606-332d-737c-b8f8-ae04381f83f5"
+          ],
+          "property_type_id": "019edafe-17d2-72e6-a941-15ed982e3dcb"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

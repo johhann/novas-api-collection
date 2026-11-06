@@ -1,0 +1,37 @@
+info:
+  name: "[POST] api/v1/room-type-listing/utilities/{roomType}"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/room-type-listing/utilities/:roomType"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: roomType
+      value: 019d03b0-5e24-7279-96c0-d50f80bf9ca0
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "utilities": [
+              "019d03ab-e95b-71cf-a3c5-0b1e19f4a338"
+          ],
+          "accessibility": [
+              "019d03ab-e6c1-7282-97d3-0588134916e6"
+          ],
+          "smoking_allowed": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

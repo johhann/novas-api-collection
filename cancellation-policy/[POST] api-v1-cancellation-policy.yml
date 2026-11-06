@@ -1,0 +1,35 @@
+info:
+  name: "[POST] api/v1/cancellation-policy"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/cancellation-policy"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "{{$randomColor}}",
+          "cutoff_days": 1,
+          "fee_type": "percentage",
+          "fee_value": 20,
+          "is_active": 1,
+          "room_type_ids": [
+              "019d5995-6b44-733e-8096-f4c576b9c912",
+              "019d5995-6b45-71a0-89b0-ad1c24ad4bf7"
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

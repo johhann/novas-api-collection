@@ -1,0 +1,32 @@
+info:
+  name: update - basic info
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base_url}}/api/v1/branch-listing/basic-info/:branch"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: branch
+      value: 019d4e70-ae9b-72f5-96b7-eb08a640a936
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "name": "{{$randomCompanyName}}",
+          "description": "{{$randomWords}}"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,34 @@
+info:
+  name: "[PATCH] /api/v1/bookings/{booking}/handle"
+  type: http
+  seq: 8
+
+http:
+  method: PATCH
+  url: "{{base_url}}/api/v1/bookings/:booking/handle"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{token}}
+      disabled: true
+  params:
+    - name: booking
+      value: 019d9f18-8b68-7346-a466-e0586e91592b
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "action": "approve"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

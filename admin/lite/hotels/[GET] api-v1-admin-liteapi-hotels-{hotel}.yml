@@ -1,0 +1,23 @@
+info:
+  name: "[GET] api/v1/admin/liteapi/hotels/{hotel}"
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/admin/liteapi/hotels/:hotel"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: hotel
+      value: 019ed606-332d-737c-b8f8-ae04381f83f5
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

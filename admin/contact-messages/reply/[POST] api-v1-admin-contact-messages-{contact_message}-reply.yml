@@ -1,0 +1,31 @@
+info:
+  name: "[POST] api/v1/admin/contact-messages/{contact_message}/reply"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/admin/contact-messages/:contact_message/reply"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: contact_message
+      value: 019e9c32-0fcd-7233-bd18-d3ae964c506d
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "message": "{{$randomWords}}"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
