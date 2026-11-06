@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{base_url}}/api/v1/chat/sessions/{{chatbotSession}}/messages"
+  url: "{{base_url}}/api/v1/chat/sessions/{{chatbotSession}}/message"
   headers:
     - name: Accept
       value: application/json
